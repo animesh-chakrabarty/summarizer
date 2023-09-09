@@ -15,7 +15,7 @@ const Hero = () => {
           }
           className="black_btn"
         >
-          Github
+          Link
         </button>
       </nav>
       <h1 className="head_text">
