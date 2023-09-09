@@ -2,17 +2,58 @@ import React, { useState, useEffect } from "react";
 
 import { copy, linkIcon, loader, tick } from "../assets";
 
+import { useLazyGetSummaryQuery } from "../services/article";
+
 const Summarizer = () => {
+  // stores the current article url and summary
   const [article, setArticle] = useState({
     url: "",
     summary: "",
   });
+  // to toggle between tick and copy img
+  const [copied, setCopied] = useState("");
+  // stores 5 previous article urls and summaries
+  const [allArticle, setAllArticle] = useState([]);
 
-  const handleSubmit = (e) => {
+  const [getSummary, { error, isFetching }] = useLazyGetSummaryQuery();
+
+  // Load all articles from local storage on page mount
+  useEffect(() => {
+    const articlesFromLocalStorage = JSON.parse(
+      localStorage.getItem("articles")
+    );
+
+    if (articlesFromLocalStorage) {
+      setAllArticle(articlesFromLocalStorage);
+    }
+  }, []);
+
+  const handleCopy = (copyUrl) => {
+    navigator.clipboard.writeText(copyUrl);
+    setCopied(copyUrl);
+    setTimeout(() => {
+      setCopied(false);
+    }, 5000);
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert("submitted");
+    const { data } = await getSummary({ articleUrl: article.url });
 
-    setArticle({ ...article, url: "" });
+    if (data?.summary) {
+      const newArticle = { ...article, summary: data.summary };
+      const updatedAllArticle = [...allArticle, newArticle];
+
+      setArticle(newArticle);
+      setAllArticle(updatedAllArticle);
+
+      // save previous articles to local storage
+      localStorage.setItem("articles", JSON.stringify(updatedAllArticle));
+
+      console.log(newArticle);
+    }
+
+    // setArticle({ ...article, url: "" });
   };
   const handlekeyDown = () => {};
 
@@ -48,10 +89,54 @@ const Summarizer = () => {
         </form>
 
         {/* browse history */}
-        <div>history</div>
+        <div className="flex flex-col gap-1 max-h-60 overflow-y-auto ">
+          {allArticle.map((item, index) => (
+            <div
+              key={`link-${index}`}
+              className="link_card"
+              onClick={() => setArticle(item)}
+            >
+              <div className="copy_btn" onClick={() => handleCopy(item.url)}>
+                <img
+                  src={copied === item.url ? tick : copy}
+                  alt="copy_icon"
+                  className="h-[20px] w-[20px] object-contain "
+                />
+              </div>
+              <p className="flex-1 font-satoshi text-blue-700 font-medium text-sm truncate">
+                {item.url}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* Display summary */}
+      <div className="my-10 flex items-center justify-center max-w-full">
+        {isFetching ? (
+          <img
+            src={loader}
+            alt="loader"
+            className="h-[80px] w-[80px] object-contain"
+          />
+        ) : error ? (
+          <p className="font-inter font-bold font-black text-center">
+            Something Went Wrong
+            {error.message}
+          </p>
+        ) : (
+          <div className="flex flex-col gap-4 my-6">
+            <h2 className="text-center font-satoshi font-bold text-[24px] ">
+              Article <span className="blue_gradient">Summary </span>
+            </h2>
+            <div className="summary_box">
+              <p className="font-inter font-medium  text-gray-700">
+                {article.summary}
+              </p>
+            </div>
+          </div>
+        )}
+      </div>
     </section>
   );
 };

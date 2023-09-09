@@ -1,11 +1,11 @@
 import React from "react";
-import { logo } from "../assets";
+import { logo, logo_2 } from "../assets";
 
 const Hero = () => {
   return (
     <header className="w-full flex flex-col items-center justify-center">
       <nav className="w-full flex justify-between items-center mt-5 mb-10">
-        <img src={logo} alt="logo" className="w-28 object-contain" />
+        <img src={logo_2} alt="logo" className="w-[200px] object-contain" />
         <button
           type="button"
           onClick={() =>
