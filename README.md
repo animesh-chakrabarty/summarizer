@@ -4,12 +4,10 @@ Welcome to the AI Article Summarizer website repository. This web application al
 
 ## Table of Contents
 
-|-------------------------------------------------|
 - [Getting Started](https://github.com/Animesh-Chakrabarty/Project-Article-Summarizer#getting-started)
 - [Usage](https://github.com/Animesh-Chakrabarty/Project-Article-Summarizer#usage)
-- Features
-- Technology Stack
-|-------------------------------------------------|
+- [Features](https://github.com/Animesh-Chakrabarty/Project-Article-Summarizer#features)
+- [Technology Stack](https://github.com/Animesh-Chakrabarty/Project-Article-Summarizer#technology-stack)
 
 ## Getting Started
 
