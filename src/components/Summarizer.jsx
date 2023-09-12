@@ -12,7 +12,7 @@ const Summarizer = () => {
   });
   // to toggle between tick and copy img
   const [copied, setCopied] = useState("");
-  // stores 5 previous article urls and summaries
+  // stores previous article urls and summaries
   const [allArticle, setAllArticle] = useState([]);
 
   const [getSummary, { error, isFetching }] = useLazyGetSummaryQuery();
@@ -28,6 +28,7 @@ const Summarizer = () => {
     }
   }, []);
 
+  // copy article link to clipboard
   const handleCopy = (copyUrl) => {
     navigator.clipboard.writeText(copyUrl);
     setCopied(copyUrl);
@@ -36,6 +37,7 @@ const Summarizer = () => {
     }, 5000);
   };
 
+  // submit article link
   const handleSubmit = async (e) => {
     e.preventDefault();
     const { data } = await getSummary({ articleUrl: article.url });
