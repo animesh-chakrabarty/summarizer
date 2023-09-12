@@ -61,5 +61,5 @@ The website should now be accessible at http://localhost:5174
 
 ## Technology Stack
 
-Tech Stack : HTML, Tailwind CSS, JavaScript , React JS , RTK Query
-Summarization API: https://rapidapi.com/restyler/api/article-extractor-and-summarizer
+- Tech Stack : HTML, Tailwind CSS, JavaScript , React JS , RTK Query
+- Summarization API: https://rapidapi.com/restyler/api/article-extractor-and-summarizer
