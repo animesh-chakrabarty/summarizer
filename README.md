@@ -22,9 +22,11 @@ git clone https://github.com/Animesh-Chakrabarty/Project-Article-Summarizer.git
 ### Install Dependencies :
 
 Navigate to the project directory and install the necessary dependencies -
-
+```
 cd ai-article-summarizer
+
 npm install
+```
 
 ### Configure Environment Variables
 
