@@ -15,31 +15,28 @@ These instructions will help you set up and deploy the AI Article Summarizer web
 
 ### Clone the Repository
 Clone this repository to your local machine using:
-
 ```
 git clone https://github.com/Animesh-Chakrabarty/Project-Article-Summarizer.git
 ```
 ### Install Dependencies :
-
 Navigate to the project directory and install the necessary dependencies -
 ```
 cd ai-article-summarizer
-
 npm install
 ```
 
 ### Configure Environment Variables
-
 Create a .env file in the root directory and configure your environment variables, including API keys if required.
-
+```
 PORT=5174
 API_KEY=your-api-key
+```
 
 ### Start the Application
-
 Start the application locally:
-
+```
 npm run dev
+```
 
 The website should now be accessible at http://localhost:5174
 
