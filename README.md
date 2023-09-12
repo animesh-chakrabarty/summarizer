@@ -11,7 +11,7 @@ Welcome to the AI Article Summarizer website repository. This web application al
 
 ## Getting Started
 
-These instructions will help you set up and deploy the AI Article Summarizer website on your own server or development environment.
+These instructions will help you set up and deploy the AI Article Summarizer website on your local environment.
 
 ### Clone the Repository
 Clone this repository to your local machine using:
