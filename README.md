@@ -1,9 +1,9 @@
 # AI Article Summarizer Website
 
-Welcome to the AI Article Summarizer website repository! This web application allows users to summarize articles by simply pasting the article's link. Additionally, users can access their history of summarized articles and copy URLs for previous summaries.
+Welcome to the AI Article Summarizer website repository. This web application allows users to summarize articles by simply pasting the article's link. Additionally, users can access their history of summarized articles and copy URLs for previous summaries.
 
 ## Table of Contents
-- Getting Started
+- (Getting Started)[https://github.com/Animesh-Chakrabarty/Project-Article-Summarizer#getting-started]
 - Usage
 - Features
 - Technology Stack
