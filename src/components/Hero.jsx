@@ -2,14 +2,14 @@ import { logo} from "../assets";
 
 const Hero = () => {
   return (
-    <header className="w-full flex flex-col items-center justify-center">
-      <nav className="w-full flex justify-between items-center mt-5 mb-10">
+    <header className="flex flex-col items-center justify-center w-full">
+      <nav className="flex items-center justify-between w-full mt-5 mb-10">
         <img src={logo} alt="logo" className="w-[200px] object-contain" />
         <button
           type="button"
           onClick={() =>
             window.open(
-              "https://github.com/Animesh-Chakrabarty/project_article_summarizer"
+              "https://github.com/animesh-chakrabarty/summarizer"
             )
           }
           className="black_btn"
