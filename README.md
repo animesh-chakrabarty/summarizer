@@ -16,7 +16,7 @@ These instructions will help you set up and deploy the AI Article Summarizer web
 ### Clone the Repository
 Clone this repository to your local machine using:
 ```
-git clone https://github.com/Animesh-Chakrabarty/Project-Article-Summarizer.git
+git clone https://github.com/animesh-chakrabarty/summarizer.git
 ```
 ### Install Dependencies :
 Navigate to the project directory and install the necessary dependencies -
